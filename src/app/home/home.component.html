@@ -1,0 +1,5 @@
+<app-nav></app-nav>
+<!-- loading task add and list selectors in home componengt -->
+<app-taskadd (notify)="publish($event)"></app-taskadd>
+<app-tasklist [inpt]="isTaskadded"></app-tasklist>
+<!-- inpt is any variable -->

@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <h1 class=" mt-5 text-center text-info" >Login</h1>
+            <!-- property binding -[], event binding - () -->
+            <form action="" [formGroup]="loginForm" (ngSubmit)="authenticate()">
+                <div class="mb-4">
+                    <input type="text" placeholder="enter username" formControlName="username" class="form-control">
+                    <!-- form-text is a class for displaying text with smallet font size -->
+                    <div class="form-text text-danger" *ngIf="username?.touched && username?.invalid">invalid username</div>
+                </div>
+                <div class="mb-3">
+                    <input type="password" placeholder="enter password" formControlName="password" class="form-control">
+                    <!-- in *ngIf getter method is used -->
+                    <div class="form-text text-danger" *ngIf="password?.touched && password?.invalid">invalid password</div>
+                </div>
+                <div class="mb-3">
+                    <!-- disabled property- if the login form is invalid button will not be clickable -->
+                    <button type="submit" class="btn btn-info btn-center d-grid gap-2 col-2 mx-auto" [disabled]="loginForm.invalid">Login</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
